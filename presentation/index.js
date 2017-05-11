@@ -13,6 +13,8 @@ import {
   List,
   Quote,
   Slide,
+  Layout,
+  Fill,
   Text,
   CodePane,
   ComponentPlayground,
@@ -36,7 +38,8 @@ require("spectacle/lib/themes/default/index.css");
 const images = {
   pattern: require("../assets/react-pattern.png"),
   redux: require("../assets/redux-logo.png"),
-  bukalapak: require("../assets/bukalapak-logo.png")
+  bukalapak: require("../assets/bukalapak-logo.png"),
+  mentosCoke: require("../assets/mentos-coke.gif")
 };
 
 preloader(images);
@@ -55,8 +58,9 @@ const theme = createTheme({
 export default class Presentation extends React.Component {
   render() {
     return (
-      <Deck transition={["zoom", "slide"]} transitionDuration={500} theme={theme}>
-        <Slide transition={["zoom"]} bgColor="white">
+      <Deck transition={["zoom", "slide"]} transitionDuration={600} theme={theme}>
+        {/* TITLE */}
+        <Slide transition={["spin"]} bgColor="white">
           <Image src={images.redux} width="20%"/>
           <Heading fit lineHeight={1} textFont="primary" textColor="redux" margin="0 0 100px 0">
             Redux Fundamentals
@@ -72,10 +76,55 @@ export default class Presentation extends React.Component {
           </Text>
           <Image src={images.bukalapak} width="25%"/>
         </Slide>
+        {/* OUTLINE */}
+        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
+          <Heading size={3} textColor="tertiary" caps>Outline</Heading>
+          <List>
+            <ListItem>Why?</ListItem>
+            <ListItem>3 Principles of Redux</ListItem>
+            <ListItem>Actions</ListItem>
+            <ListItem>Reducers</ListItem>
+            <ListItem>Store</ListItem>
+            <ListItem>Example</ListItem>
+            <ListItem>What's Next?</ListItem>
+          </List>
+        </Slide>
+        {/* WHY? */}
         <Slide transition={["slide"]} width="100%" >
-          <Image width="100%" src={images.pattern}/>
+          <Heading size={3} textColor="quartenary" margin="0 0 50px 0" caps>Why?</Heading>
+          <Layout>
+            <Fill>
+              <Appear fid="1">
+                <Heading caps fit textColor="tertiary">Mutation +</Heading>
+              </Appear>
+              <Appear fid="2">
+                <Heading caps fit textColor="tertiary">Asynchronicity</Heading>
+              </Appear>
+            </Fill>
+            <Fill>
+              <Appear fid="3">
+                <Heading size={4} caps textColor="tertiary" margin="15px 20px">Mentos +</Heading>
+              </Appear>
+              <Appear fid="4">
+                <Heading size={5} caps textColor="tertiary" margin="15px 20px">Coke</Heading>
+              </Appear>
+            </Fill>
+          </Layout>
+          <Layout>
+            <Fill>
+              <Appear fid="1">
+                <Heading caps textColor="tertiary">=</Heading>
+              </Appear>
+            </Fill>
+            <Fill>
+              <Appear fid="2">
+                <Image src={images.mentosCoke}/>
+              </Appear>
+            </Fill>
+          </Layout>
         </Slide>
         <Slide transition={["slide"]} bgImage={images.pattern.replace("/", "")} bgDarken={0.5}>
+          <Image width="100%" src={images.pattern}/>
           <Appear fid="1">
             <Heading size={6} caps fit textColor="primary">Props Down</Heading>
           </Appear>
