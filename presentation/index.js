@@ -64,10 +64,10 @@ export default class Presentation extends React.Component {
           <Text textSize="24" textColor="quartenary" textFont="secondary" bold>
             by
           </Text>
-          <Text textSize="48" textColor="quartenary" textFont="secondary" bold>
+          <Text textSize="42" textColor="quartenary" textFont="secondary" bold>
             Zain Fathoni
           </Text>
-          <Text textSize="36" textColor="tertiary" textFont="primary" bold margin="20px 0 10px 0">
+          <Text textSize="30" textColor="tertiary" textFont="primary" bold margin="20px 0 10px 0">
             Software Engineer at
           </Text>
           <Image src={images.bukalapak} width="25%"/>
