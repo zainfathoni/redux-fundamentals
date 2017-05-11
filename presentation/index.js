@@ -80,19 +80,20 @@ export default class Presentation extends React.Component {
         </Slide>
         {/* OUTLINE */}
         <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-          <Heading size={3} textColor="tertiary" caps>Outline</Heading>
+          <Heading size={2} textColor="tertiary" caps>Outline</Heading>
           <List>
             <ListItem>Why?</ListItem>
-            <ListItem>3 Principles of Redux</ListItem>
+            <ListItem>Three Principles of Redux</ListItem>
             <ListItem>Actions</ListItem>
             <ListItem>Reducers</ListItem>
             <ListItem>Store</ListItem>
             <ListItem>Example</ListItem>
+            <ListItem>Behind The Scene</ListItem>
             <ListItem>What's Next?</ListItem>
           </List>
         </Slide>
         {/* WHY? */}
-        <Slide transition={["slide"]} width="100%" >
+        <Slide transition={["spin"]} width="100%" >
           <Heading size={2} textColor="quartenary" margin="0 0 50px 0" caps>Why?</Heading>
           <Layout>
             <Fill>
@@ -126,7 +127,7 @@ export default class Presentation extends React.Component {
           </Layout>
         </Slide>
         <Slide transition={["slide"]} width="100%" bgColor="white" >
-          <Heading size={2} textColor="quartenary" margin="0 0 50px 0" caps>Solution</Heading>
+          <Heading size={1} textColor="quartenary" margin="0 0 50px 0" caps>Solution</Heading>
           <Layout>
             <Fill>
               <Appear fid="1">
@@ -172,7 +173,7 @@ export default class Presentation extends React.Component {
         </Slide>
         <CodeSlide
           textSize="18"
-          transition={[]}
+          transition={["fade"]}
           lang="jsx"
           code={require("raw-loader!../assets/react-pattern.code")}
           ranges={[
@@ -183,9 +184,19 @@ export default class Presentation extends React.Component {
             { loc: [76, 93], note: "Passing Down Props (Again)" }
           ]}
         />
+        {/* THREE PRINCIPLES OF REDUX */}
+        <Slide transition={["spin"]} bgColor="primary" textColor="tertiary">
+          <Heading size={3} textColor="tertiary" caps>Three Principles</Heading>
+          <Heading size={3} textColor="tertiary" caps>of Redux</Heading>
+          <List>
+            <ListItem>Single Source of Truth</ListItem>
+            <ListItem>State is Read-Only</ListItem>
+            <ListItem>Changes are Made with Pure Functions</ListItem>
+          </List>
+        </Slide>
         <CodeSlide
           textSize="25"
-          transition={[]}
+          transition={["fade"]}
           lang="jsx"
           code={require("raw-loader!../assets/reducer.example")}
           ranges={[
