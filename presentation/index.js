@@ -14,7 +14,6 @@ import {
   Quote,
   Slide,
   Text,
-  Code,
   CodePane,
   ComponentPlayground,
   Link,
@@ -36,24 +35,43 @@ require("spectacle/lib/themes/default/index.css");
 
 const images = {
   pattern: require("../assets/react-pattern.png"),
+  redux: require("../assets/redux-logo.png"),
+  bukalapak: require("../assets/bukalapak-logo.png")
 };
 
 preloader(images);
 
 const theme = createTheme({
-  primary: "white",
-  secondary: "#1F2022",
-  tertiary: "#764ABC",
-  quartenary: "#CECECE"
+  primary: "#6FE7DD",
+  secondary: "#3490DE",
+  tertiary: "#6639A6",
+  quartenary: "#521262",
+  redux: "#6639A6"
 }, {
-  primary: "Montserrat",
-  secondary: "Helvetica"
+  primary: "Titillium Web",
+  secondary: "Source Sans Pro"
 });
 
 export default class Presentation extends React.Component {
   render() {
     return (
       <Deck transition={["zoom", "slide"]} transitionDuration={500} theme={theme}>
+        <Slide transition={["zoom"]} bgColor="white">
+          <Image src={images.redux} width="40%"/>
+          <Heading size={4} fit lineHeight={1} textFont="primary" textColor="redux" margin="0 0 100px 0">
+            Fundamentals
+          </Heading>
+          <Text textSize="24" textColor="quartenary" textFont="secondary" bold>
+            by
+          </Text>
+          <Text textSize="48" textColor="quartenary" textFont="secondary" bold>
+            Zain Fathoni
+          </Text>
+          <Text textSize="36" textColor="tertiary" textFont="primary" bold margin="20px 0 10px 0">
+            Software Engineer at
+          </Text>
+          <Image src={images.bukalapak} width="25%"/>
+        </Slide>
         <Slide transition={["slide"]} width="100%" >
           <Image width="100%" src={images.pattern}/>
         </Slide>
@@ -76,7 +94,7 @@ export default class Presentation extends React.Component {
           </Appear>
         </Slide>
         <CodeSlide
-          textSize={18}
+          textSize="18"
           transition={[]}
           lang="jsx"
           code={require("raw-loader!../assets/react-pattern.code")}
@@ -89,21 +107,21 @@ export default class Presentation extends React.Component {
           ]}
         />
         <CodeSlide
-          textSize={25}
+          textSize="25"
           transition={[]}
           lang="jsx"
           code={require("raw-loader!../assets/reducer.example")}
           ranges={[
-            { loc: [0, 7], title: "Reducer" },
+            { loc: [0, 11], title: "Reducer" },
             { loc: [0, 1], note: "Accepts State & Action" },
-            { loc: [1, 5], note: "Action Switch" },
-            { loc: [5, 6], note: "Returns State" }
+            { loc: [1, 6], note: "Action Switch" },
+            { loc: [6, 8], note: "Return the previous State in the default case" }
           ]}
         />
         <Slide transition={["zoom", "fade"]} bgColor="primary" notes="<ul><li>talk about that</li><li>and that</li></ul>">
           <Heading size={6} textColor="tertiary" caps>Reducer</Heading>
           <CodePane
-            textSize={18}
+            textSize="18"
             lang="jsx"
             source={require("raw-loader!../assets/reducer.example")}
           />
@@ -112,7 +130,7 @@ export default class Presentation extends React.Component {
           <Link href="https://medium.com/@dan_abramov/you-might-not-need-redux-be46360cf367">
             <Text>
               You might not need Redux
-          </Text>
+            </Text>
           </Link>
         </Slide>
         <Slide align="center center">

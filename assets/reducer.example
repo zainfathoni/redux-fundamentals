@@ -1,7 +1,10 @@
 const greetingReducer = (state = "", action) => {
   switch (action.type) {
-    case "SAY_HELLO": return "Hello ";
-    case "SAY_GOODBYE": return "Goodbye ";
+    case "SAY_HELLO":
+      return "Hello ";
+    case "SAY_GOODBYE":
+      return "Goodbye ";
+    default:
+      return state;
   }
-  return state;
 };
