@@ -13,7 +13,11 @@ import {
   Quote,
   Slide,
   Text,
-  ComponentPlayground
+  CodePane,
+  ComponentPlayground,
+  Link,
+  Appear,
+  MarkdownSlides
 } from "spectacle";
 
 // Import image preloader util
@@ -28,6 +32,7 @@ require("spectacle/lib/themes/default/index.css");
 
 
 const images = {
+  pattern: require("../assets/react-pattern.png"),
   city: require("../assets/city.jpg"),
   kat: require("../assets/kat.png"),
   logo: require("../assets/formidable-logo.svg"),
@@ -82,25 +87,66 @@ export default class Presentation extends React.Component {
             <Cite>Author</Cite>
           </BlockQuote>
         </Slide>
+         {
+          MarkdownSlides`
+#### Create Multiple Slides in Markdown
+All the same tags and elements supported in <Markdown /> are supported in MarkdownSlides.
+---
+Slides are separated with **three dashes** and can be used _anywhere_ in the deck. The markdown can either be:
+* A Tagged Template Literal
+* Imported Markdown from another file
+          `
+        }
+        <Slide transition={["slide"]} bgImage={images.pattern.replace("/", "")} bgDarken={0.1}>
+          <Appear fid="1">
+            <Heading size={1} caps fit textColor="primary">
+              Full Width
+            </Heading>
+          </Appear>
+          <Appear fid="2">
+            <Heading size={1} caps fit textColor="tertiary">
+              Adjustable Darkness
+            </Heading>
+          </Appear>
+          <Appear fid="3">
+            <Heading size={1} caps fit textColor="primary">
+              Background Imagery
+            </Heading>
+          </Appear>
+        </Slide>
         <CodeSlide
+          textSize={25}
           transition={[]}
           lang="js"
-          code={require("raw-loader!../assets/deck.example")}
+          code={require("raw-loader!../assets/reducer.example")}
           ranges={[
-            { loc: [0, 270], title: "Walking through some code" },
-            { loc: [0, 1], title: "The Beginning" },
-            { loc: [1, 2] },
-            { loc: [1, 2], note: "Heres a note!" },
-            { loc: [2, 3] },
-            { loc: [4, 7], image: images.city },
-            { loc: [8, 10] },
+            { loc: [0, 7], title: "Reducer" },
+            { loc: [0, 1], note: "Accepts State & Action" },
+            { loc: [1, 5], note: "Action Switch" },
+            { loc: [5, 6], note: "Returns State" },
           ]}
         />
-          <Slide>
-            <ComponentPlayground
-              code={require("raw-loader!../assets/code.example")}
-            />
-          </Slide>
+        <Slide transition={["zoom", "fade"]} bgColor="primary" notes="<ul><li>talk about that</li><li>and that</li></ul>">
+          <Heading size={6} textColor="tertiary" caps>Reducer</Heading>
+          <CodePane
+            textSize={18}
+            lang="jsx"
+            source={require("raw-loader!../assets/reducer.example")}
+          />
+        </Slide>
+        <Slide transition={["fade"]} bgColor="tertiary">
+          <Link
+            href="https://medium.com/@dan_abramov/you-might-not-need-redux-be46360cf367">
+            <Text>
+              You might not need Redux
+          </Text>
+          </Link>
+        </Slide>
+        <Slide align="center center">
+          <ComponentPlayground
+            code={require("raw-loader!../assets/code.example")}
+          />
+        </Slide>
       </Deck>
     );
   }

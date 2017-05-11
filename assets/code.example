@@ -1,10 +1,40 @@
-class View extends React.Component {
-  componentDidMount() {
-    console.log("Hello");
-  }
-
-  render() {
-    return (<div>My View</div>);
+const counter = (state = { value: 0 }, action) => {
+  switch (action.type) {
+    case 'INCREMENT':
+      return { value: state.value + 1 };
+    case 'DECREMENT':
+      return { value: state.value - 1 };
+    default:
+      return state;
   }
 }
-render(<View />, mountNode);
+
+class App extends Component {
+  state = counter(undefined, {});
+
+  dispatch(action) {
+    this.setState(prevState => counter(prevState, action));
+  }
+
+  increment = () => {
+    console.log('INCREMENT');
+    this.dispatch({ type: 'INCREMENT' });
+  };
+
+  decrement = () => {
+    console.log('DECREMENT');
+    this.dispatch({ type: 'DECREMENT' });
+  };
+
+  render() {
+    return (
+      <div>
+        {this.state.value} <br />
+        <button onClick={this.increment}>+</button>
+        <button onClick={this.decrement}>-</button>
+      </div>
+    )
+  }
+}
+
+render(<App />, mountNode);
