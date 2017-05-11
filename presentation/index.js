@@ -127,33 +127,16 @@ export default class Presentation extends React.Component {
           </Layout>
         </Slide>
         <Slide transition={["slide"]} width="100%" bgColor="white" >
-          <Heading size={1} textColor="quartenary" margin="0 0 50px 0" caps>Solution</Heading>
-          <Layout>
-            <Fill>
-              <Appear fid="1">
-                <div>
-                  <Image src={images.react} width="25%"/>
-                  <Heading size={1} caps textColor="react">React</Heading>
-                </div>
-              </Appear>
-              <Appear fid="2">
-                <Heading size={4} textColor="react">View Layer</Heading>
-              </Appear>
-            </Fill>
-            <Fill>
-              <Appear fid="3">
-                <div>
-                  <Image src={images.redux} width="25%" margin="11px 0"/>
-                  <Heading size={1} caps textColor="redux">Redux</Heading>
-                </div>
-              </Appear>
-              <Appear fid="4">
-                <Heading size={4} textColor="redux">Data Layer</Heading>
-              </Appear>
-            </Fill>
-          </Layout>
+          <Heading size={1} textColor="react" margin="0 0 50px 0" caps>Solution</Heading>
+          <Appear fid="1">
+            <div>
+              <Image src={images.react} width="25%"/>
+              <Heading size={1} caps textColor="react">React</Heading>
+            </div>
+          </Appear>
         </Slide>
         <Slide transition={["slide"]} bgImage={images.pattern.replace("/", "")} bgDarken={0.05}>
+          <Heading size={1} textColor="secondary" margin="0 0 50px 0">But ...</Heading>
           <Appear fid="1">
             <Heading size={6} caps fit textColor="primary">Props Down</Heading>
           </Appear>
@@ -177,13 +160,41 @@ export default class Presentation extends React.Component {
           lang="jsx"
           code={require("raw-loader!../assets/react-pattern.code")}
           ranges={[
-            { loc: [0, 148], title: "Real World Example" },
-            { loc: [0, 16], note: "Received Props" },
+            { loc: [0, 4], title: "Real World Example" },
+            { loc: [6, 16], note: "Received Props" },
             { loc: [130, 147], note: "PropTypes Definition" },
             { loc: [105, 121], note: "Passing Down Props" },
             { loc: [76, 93], note: "Passing Down Props (Again)" }
           ]}
         />
+        <Slide transition={["slide"]} width="100%" bgColor="white" >
+          <Heading size={1} textColor="quartenary" margin="0 0 50px 0" caps>Solution</Heading>
+          <Layout>
+            <Fill>
+              <Appear fid="1">
+                <div>
+                  <Image src={images.react} width="25%"/>
+                  <Heading size={1} caps textColor="react">React</Heading>
+                </div>
+              </Appear>
+              <Appear fid="2">
+                <Heading size={4} textColor="react">as View Layer</Heading>
+              </Appear>
+            </Fill>
+            <Fill>
+              <Appear fid="3">
+                <div>
+                  <Image src={images.redux} width="25%" margin="11px 0"/>
+                  <Heading size={1} caps textColor="redux">Redux</Heading>
+                </div>
+              </Appear>
+              <Appear fid="4">
+                <Heading size={4} textColor="redux">as Data Layer</Heading>
+              </Appear>
+            </Fill>
+          </Layout>
+        </Slide>
+
         {/* THREE PRINCIPLES OF REDUX */}
         <Slide transition={["spin"]} bgColor="primary" textColor="tertiary">
           <Heading size={3} textColor="tertiary" caps>Three Principles</Heading>
@@ -206,6 +217,7 @@ export default class Presentation extends React.Component {
             { loc: [6, 8], note: "Return the previous State in the default case" }
           ]}
         />
+        {/* SAMPLE SLIDES */}
         <Slide transition={["zoom", "fade"]} bgColor="primary" notes="<ul><li>talk about that</li><li>and that</li></ul>">
           <Heading size={6} textColor="tertiary" caps>Reducer</Heading>
           <CodePane
