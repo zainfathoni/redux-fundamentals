@@ -14,8 +14,10 @@ import {
   Quote,
   Slide,
   Layout,
+  Fit,
   Fill,
   Text,
+  S,
   CodePane,
   ComponentPlayground,
   Link,
@@ -146,14 +148,15 @@ export default class Presentation extends React.Component {
           <Appear fid="3">
             <Text textColor="primary">
               One of
-              <Link href="https://hackernoon.com/10-react-mini-patterns-c1da92f068c5">
+              <Link href="https://hackernoon.com/10-react-mini-patterns-c1da92f068c5" target="_blank">
                 <Text textColor="primary" bold>
-                  10 React Mini Patterns
+                  <S type="underline">10 React Mini Patterns</S>
                 </Text>
               </Link>
             </Text>
           </Appear>
         </Slide>
+        {/* REACT PATTERN */}
         <CodeSlide
           textSize="18"
           transition={["fade"]}
@@ -197,13 +200,41 @@ export default class Presentation extends React.Component {
 
         {/* THREE PRINCIPLES OF REDUX */}
         <Slide transition={["spin"]} bgColor="primary" textColor="tertiary">
-          <Heading size={3} textColor="tertiary" caps>Three Principles</Heading>
-          <Heading size={3} textColor="tertiary" caps>of Redux</Heading>
+          <Heading size={3} textColor="quartenary" caps>Three Principles of</Heading>
+          <Heading size={3} textColor="redux" caps margin="0 0 30px 0">Redux</Heading>
           <List>
             <ListItem>Single Source of Truth</ListItem>
             <ListItem>State is Read-Only</ListItem>
             <ListItem>Changes are Made with Pure Functions</ListItem>
           </List>
+        </Slide>
+        <Slide transition={["slide"]} bgColor="primary" textColor="tertiary">
+          <Heading size={3} textColor="tertiary" caps margin="0 0 30px 0">Single Source of Truth</Heading>
+          <Layout>
+            <Fit>
+              <CodePane
+                textSize="18"
+                lang="js"
+                source={require("raw-loader!../assets/first-principle.code")}
+              />
+            </Fit>
+            <Fill>
+              <List margin="20px 0 0 20px">
+                <Appear fid="1">
+                  <ListItem textColor="quartenary" textSize="30">One JavaScript object for the <S type="bold">entire state</S> of the application</ListItem>
+                </Appear>
+                <Appear fid="2">
+                  <ListItem textColor="quartenary" textSize="30">All changes and mutations are <S type="bold">explicit</S></ListItem>
+                </Appear>
+                <Appear fid="3">
+                  <ListItem textColor="quartenary" textSize="30">Easy to track <S type="bold">state changes</S> overtime</ListItem>
+                </Appear>
+                <Appear fid="4">
+                  <ListItem textColor="quartenary" textSize="30">Easy to implement difficult features such as <S type="bold">Undo/Redo</S></ListItem>
+                </Appear>
+              </List>
+            </Fill>
+          </Layout>
         </Slide>
         <CodeSlide
           textSize="25"
