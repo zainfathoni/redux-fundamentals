@@ -1,0 +1,10 @@
+class View extends React.Component {
+  componentDidMount() {
+    console.log("Hello");
+  }
+
+  render() {
+    return (<div>My View</div>);
+  }
+}
+render(<View />, mountNode);
