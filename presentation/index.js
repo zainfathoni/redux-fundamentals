@@ -38,6 +38,7 @@ require("spectacle/lib/themes/default/index.css");
 const images = {
   pattern: require("../assets/react-pattern.png"),
   redux: require("../assets/redux-logo.png"),
+  react: require("../assets/react-logo.svg"),
   bukalapak: require("../assets/bukalapak-logo.png"),
   mentosCoke: require("../assets/mentos-coke.gif")
 };
@@ -49,7 +50,8 @@ const theme = createTheme({
   secondary: "#3490DE",
   tertiary: "#6639A6",
   quartenary: "#521262",
-  redux: "#8800BE"
+  redux: "#8800BE",
+  react: "#00D8FF"
 }, {
   primary: "Titillium Web",
   secondary: "Source Sans Pro"
@@ -65,13 +67,13 @@ export default class Presentation extends React.Component {
           <Heading fit lineHeight={1} textFont="primary" textColor="redux" margin="0 0 100px 0">
             Redux Fundamentals
           </Heading>
-          <Text textSize="24" textColor="quartenary" textFont="secondary" bold>
+          <Text textSize="24px" textColor="quartenary" textFont="secondary" bold>
             by
           </Text>
-          <Text textSize="42" textColor="quartenary" textFont="secondary" bold>
+          <Text textSize="42px" textColor="quartenary" textFont="secondary" bold>
             Zain Fathoni
           </Text>
-          <Text textSize="30" textColor="tertiary" textFont="primary" bold margin="20px 0 10px 0">
+          <Text textSize="30px" textColor="tertiary" textFont="primary" bold margin="20px 0 10px 0">
             Software Engineer at
           </Text>
           <Image src={images.bukalapak} width="25%"/>
@@ -91,29 +93,29 @@ export default class Presentation extends React.Component {
         </Slide>
         {/* WHY? */}
         <Slide transition={["slide"]} width="100%" >
-          <Heading size={3} textColor="quartenary" margin="0 0 50px 0" caps>Why?</Heading>
+          <Heading size={2} textColor="quartenary" margin="0 0 50px 0" caps>Why?</Heading>
           <Layout>
             <Fill>
               <Appear fid="1">
                 <Heading caps fit textColor="tertiary">Mutation +</Heading>
               </Appear>
               <Appear fid="2">
-                <Heading caps fit textColor="tertiary">Asynchronicity</Heading>
+                <Heading caps fit textColor="tertiary" margin="8px 0">Asynchronicity</Heading>
               </Appear>
             </Fill>
             <Fill>
               <Appear fid="3">
-                <Heading size={4} caps textColor="tertiary" margin="15px 20px">Mentos +</Heading>
+                <Heading size={4} caps textColor="tertiary" margin="13px 20px">Mentos</Heading>
               </Appear>
               <Appear fid="4">
-                <Heading size={5} caps textColor="tertiary" margin="15px 20px">Coke</Heading>
+                <Heading size={4} caps textColor="tertiary" margin="8px 20px">+ Coke</Heading>
               </Appear>
             </Fill>
           </Layout>
           <Layout>
             <Fill>
               <Appear fid="1">
-                <Heading caps textColor="tertiary">=</Heading>
+                <Heading caps textColor="tertiary" margin="25px 0">=</Heading>
               </Appear>
             </Fill>
             <Fill>
@@ -123,13 +125,39 @@ export default class Presentation extends React.Component {
             </Fill>
           </Layout>
         </Slide>
-        <Slide transition={["slide"]} bgImage={images.pattern.replace("/", "")} bgDarken={0.5}>
-          <Image width="100%" src={images.pattern}/>
+        <Slide transition={["slide"]} width="100%" bgColor="white" >
+          <Heading size={2} textColor="quartenary" margin="0 0 50px 0" caps>Solution</Heading>
+          <Layout>
+            <Fill>
+              <Appear fid="1">
+                <div>
+                  <Image src={images.react} width="25%"/>
+                  <Heading size={1} caps textColor="react">React</Heading>
+                </div>
+              </Appear>
+              <Appear fid="2">
+                <Heading size={4} textColor="react">View Layer</Heading>
+              </Appear>
+            </Fill>
+            <Fill>
+              <Appear fid="3">
+                <div>
+                  <Image src={images.redux} width="25%" margin="11px 0"/>
+                  <Heading size={1} caps textColor="redux">Redux</Heading>
+                </div>
+              </Appear>
+              <Appear fid="4">
+                <Heading size={4} textColor="redux">Data Layer</Heading>
+              </Appear>
+            </Fill>
+          </Layout>
+        </Slide>
+        <Slide transition={["slide"]} bgImage={images.pattern.replace("/", "")} bgDarken={0.05}>
           <Appear fid="1">
             <Heading size={6} caps fit textColor="primary">Props Down</Heading>
           </Appear>
           <Appear fid="2">
-            <Heading size={6} caps fit textColor="primary">Action Up</Heading>
+            <Heading size={6} caps fit textColor="primary">Actions Up</Heading>
           </Appear>
           <Appear fid="3">
             <Text textColor="primary">
