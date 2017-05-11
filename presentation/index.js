@@ -17,7 +17,8 @@ import {
   ComponentPlayground,
   Link,
   Appear,
-  MarkdownSlides
+  MarkdownSlides,
+  Image
 } from "spectacle";
 
 // Import image preloader util
@@ -97,33 +98,45 @@ Slides are separated with **three dashes** and can be used _anywhere_ in the dec
 * Imported Markdown from another file
           `
         }
-        <Slide transition={["slide"]} bgImage={images.pattern.replace("/", "")} bgDarken={0.1}>
+        <Slide transition={["slide"]} width="100%" >
+          <Image width="100%" src={images.pattern}/>
+        </Slide>
+        <Slide transition={["slide"]} bgImage={images.pattern.replace("/", "")} bgDarken={0.2}>
           <Appear fid="1">
-            <Heading size={1} caps fit textColor="primary">
-              Full Width
-            </Heading>
+            <Heading size={6} caps fit textColor="primary">Props Down</Heading>
           </Appear>
           <Appear fid="2">
-            <Heading size={1} caps fit textColor="tertiary">
-              Adjustable Darkness
-            </Heading>
+            <Heading size={6} caps fit textColor="primary">Action Up</Heading>
           </Appear>
           <Appear fid="3">
-            <Heading size={1} caps fit textColor="primary">
-              Background Imagery
-            </Heading>
+            <Text textColor="primary" bold>
+              One of <Link href="https://hackernoon.com/10-react-mini-patterns-c1da92f068c5">10 React Mini Patterns</Link>
+            </Text>
           </Appear>
         </Slide>
         <CodeSlide
+          textSize={18}
+          transition={[]}
+          lang="jsx"
+          code={require("raw-loader!../assets/react-pattern.code")}
+          ranges={[
+            { loc: [0, 148], title: "Real World Example" },
+            { loc: [0, 16], note: "Received Props" },
+            { loc: [130, 147], note: "PropTypes Definition" },
+            { loc: [105, 121], note: "Passing Down Props" },
+            { loc: [76, 93], note: "Passing Down Props (Again)" }
+          ]}
+        />
+        <CodeSlide
           textSize={25}
           transition={[]}
-          lang="js"
+          lang="jsx"
           code={require("raw-loader!../assets/reducer.example")}
           ranges={[
             { loc: [0, 7], title: "Reducer" },
             { loc: [0, 1], note: "Accepts State & Action" },
             { loc: [1, 5], note: "Action Switch" },
-            { loc: [5, 6], note: "Returns State" },
+            { loc: [5, 6], note: "Returns State" }
           ]}
         />
         <Slide transition={["zoom", "fade"]} bgColor="primary" notes="<ul><li>talk about that</li><li>and that</li></ul>">
@@ -135,8 +148,7 @@ Slides are separated with **three dashes** and can be used _anywhere_ in the dec
           />
         </Slide>
         <Slide transition={["fade"]} bgColor="tertiary">
-          <Link
-            href="https://medium.com/@dan_abramov/you-might-not-need-redux-be46360cf367">
+          <Link href="https://medium.com/@dan_abramov/you-might-not-need-redux-be46360cf367">
             <Text>
               You might not need Redux
           </Text>
