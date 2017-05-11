@@ -160,11 +160,11 @@ export default class Presentation extends React.Component {
           lang="jsx"
           code={require("raw-loader!../assets/react-pattern.code")}
           ranges={[
-            { loc: [0, 4], title: "Real World Example" },
-            { loc: [6, 16], note: "Received Props" },
-            { loc: [130, 147], note: "PropTypes Definition" },
-            { loc: [105, 121], note: "Passing Down Props" },
-            { loc: [76, 93], note: "Passing Down Props (Again)" }
+            { loc: [0, 4], title: "Real World Example", note: "Case Study: Intermediate Component" },
+            { loc: [6, 16], title: "Received Props", note: "It takes (many) Props from Parent Component" },
+            { loc: [130, 147], title: "PropTypes Definition", note: "Even one of those Props contains more (many) hidden Props" },
+            { loc: [105, 121], title: "Passing Down Props", note: "Some of the hidden Props are destructured before being passed to the Children Components" },
+            { loc: [76, 93], title: "Passing Down Props (Again)", note: "More Children Components, more passing down Props... :(" }
           ]}
         />
         <Slide transition={["slide"]} width="100%" bgColor="white" >
