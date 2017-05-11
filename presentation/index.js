@@ -46,7 +46,7 @@ const theme = createTheme({
   secondary: "#3490DE",
   tertiary: "#6639A6",
   quartenary: "#521262",
-  redux: "#6639A6"
+  redux: "#8800BE"
 }, {
   primary: "Titillium Web",
   secondary: "Source Sans Pro"
@@ -57,9 +57,9 @@ export default class Presentation extends React.Component {
     return (
       <Deck transition={["zoom", "slide"]} transitionDuration={500} theme={theme}>
         <Slide transition={["zoom"]} bgColor="white">
-          <Image src={images.redux} width="40%"/>
-          <Heading size={4} fit lineHeight={1} textFont="primary" textColor="redux" margin="0 0 100px 0">
-            Fundamentals
+          <Image src={images.redux} width="20%"/>
+          <Heading fit lineHeight={1} textFont="primary" textColor="redux" margin="0 0 100px 0">
+            Redux Fundamentals
           </Heading>
           <Text textSize="24" textColor="quartenary" textFont="secondary" bold>
             by
