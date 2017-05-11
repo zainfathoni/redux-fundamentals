@@ -236,11 +236,95 @@ export default class Presentation extends React.Component {
             </Fill>
           </Layout>
         </Slide>
+        <Slide transition={["slide"]} bgColor="primary" textColor="tertiary">
+          <Heading size={3} textColor="tertiary" caps margin="0 0 30px 0">State is Read-Only</Heading>
+          <Layout>
+            <Fit>
+              <CodePane
+                textSize="18"
+                lang="js"
+                source={require("raw-loader!../assets/second-principle.code")}
+              />
+            </Fit>
+            <Fill>
+              <List margin="20px 0 0 20px">
+                <Appear fid="1">
+                  <ListItem textColor="quartenary" textSize="30">The state tree is <S type="bold">read only</S></ListItem>
+                </Appear>
+                <Appear fid="2">
+                  <ListItem textColor="quartenary" textSize="30">Any time you want to change the state, you have to dispatch an <S type="bold">action</S></ListItem>
+                </Appear>
+                <Appear fid="3">
+                  <ListItem textColor="quartenary" textSize="30">An action is a <S type="bold">plain JS object</S> describing the change</ListItem>
+                </Appear>
+              </List>
+            </Fill>
+          </Layout>
+        </Slide>
+        <Slide transition={["slide"]} bgColor="primary" textColor="tertiary">
+          <Heading size={3} textColor="tertiary">Changes are Made with</Heading>
+          <Heading size={3} textColor="tertiary" caps margin="0 0 30px 0">Pure Functions</Heading>
+          <Layout>
+            <Fit>
+              <CodePane
+                textSize="18"
+                lang="js"
+                source={require("raw-loader!../assets/third-principle.code")}
+              />
+            </Fit>
+            <Fill>
+              <List margin="20px 0 0 20px">
+                <Appear fid="1">
+                  <ListItem textColor="quartenary" textSize="30">Pure functions <S type="bold">don't have side effects</S> like network or database calls</ListItem>
+                </Appear>
+                <Appear fid="2">
+                  <ListItem textColor="quartenary" textSize="30">Pure functions also <S type="bold">do not override the values</S> of anything</ListItem>
+                </Appear>
+              </List>
+            </Fill>
+          </Layout>
+        </Slide>
+        <Slide transition={["slide"]} bgColor="primary" textColor="tertiary">
+          <Layout>
+            <Fill>
+              <Heading size={3} textColor="tertiary" caps>Pure Functions</Heading>
+            </Fill>
+            <Fit>
+              <Heading size={4} textColor="tertiary">vs</Heading>
+            </Fit>
+            <Fill>
+              <Heading size={3} textColor="tertiary" caps>Impure Functions</Heading>
+            </Fill>
+          </Layout>
+          <Layout>
+            <Fill>
+              <CodePane
+                textSize="18"
+                lang="js"
+                source={require("raw-loader!../assets/pure-functions.code")}
+                margin="20px 20px 0 0"
+              />
+            </Fill>
+            <Fill>
+              <CodePane
+                textSize="18"
+                lang="js"
+                source={require("raw-loader!../assets/impure-functions.code")}
+                margin="20px 0 0 20px"
+              />
+            </Fill>
+          </Layout>
+        </Slide>
+        <Slide align="center center">
+          <ComponentPlayground
+            code={require("raw-loader!../assets/counter.code")}
+          />
+        </Slide>
         <CodeSlide
           textSize="25"
           transition={["fade"]}
           lang="jsx"
-          code={require("raw-loader!../assets/reducer.example")}
+          code={require("raw-loader!../assets/reducer.code")}
           ranges={[
             { loc: [0, 11], title: "Reducer" },
             { loc: [0, 1], note: "Accepts State & Action" },
@@ -249,25 +333,12 @@ export default class Presentation extends React.Component {
           ]}
         />
         {/* SAMPLE SLIDES */}
-        <Slide transition={["zoom", "fade"]} bgColor="primary" notes="<ul><li>talk about that</li><li>and that</li></ul>">
-          <Heading size={6} textColor="tertiary" caps>Reducer</Heading>
-          <CodePane
-            textSize="18"
-            lang="jsx"
-            source={require("raw-loader!../assets/reducer.example")}
-          />
-        </Slide>
         <Slide transition={["fade"]} bgColor="tertiary">
           <Link href="https://medium.com/@dan_abramov/you-might-not-need-redux-be46360cf367">
             <Text>
               You might not need Redux
             </Text>
           </Link>
-        </Slide>
-        <Slide align="center center">
-          <ComponentPlayground
-            code={require("raw-loader!../assets/code.example")}
-          />
         </Slide>
         <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
           <BlockQuote>

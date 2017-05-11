@@ -1,0 +1,9 @@
+completeTodo = {
+  type: 'COMPLETE_TODO',
+  index: 1
+}
+
+showCompleted = {
+  type: 'SET_VISIBILITY_FILTER',
+  filter: 'SHOW_COMPLETED'
+}
