@@ -56,7 +56,8 @@ const theme = createTheme({
   react: "#00D8FF"
 }, {
   primary: "Titillium Web",
-  secondary: "Source Sans Pro"
+  secondary: "Source Sans Pro",
+  monospace: "monospace"
 });
 
 export default class Presentation extends React.Component {
@@ -320,6 +321,9 @@ export default class Presentation extends React.Component {
             code={require("raw-loader!../assets/counter.code")}
           />
         </Slide>
+        <Slide transition={["spin"]} width="100%" >
+          <Heading size={2} textColor="quartenary" margin="0 0 50px 0" caps>Building Todo App</Heading>
+        </Slide>
         <CodeSlide
           textSize="25"
           transition={["fade"]}
@@ -356,16 +360,55 @@ export default class Presentation extends React.Component {
             { loc: [2, 12], title: "State Shape", note: "Todos" }
           ]}
         />
+        <Slide transition={["slide"]} bgColor="primary" textColor="tertiary">
+          <Heading size={3} textColor="tertiary" caps margin="0 0 30px 0">Reducer Structure</Heading>
+          <CodePane
+            textSize="30"
+            lang="js"
+            source={require("raw-loader!../assets/reducer-structure.code")}
+          />
+          <Appear fid="1">
+            <Text textColor="quartenary" textSize="20" margin="20px 0 0 0">
+              Why is it called a <S type="bold">reducer</S>?
+            </Text>
+          </Appear>
+          <Link href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce" target="_blank">
+            <Appear fid="2">
+                <Text textColor="quartenary" textFont="monospace" textSize="20">
+                  <S type="underline">Array.prototype.reduce(reducer, ?initialValue)</S>
+                </Text>
+            </Appear>
+          </Link>
+          <Appear fid="3">
+            <Text textColor="quartenary" textSize="30" margin="30px 0 0 0">
+              Things you should <S type="bold">never</S> do inside a reducer:
+            </Text>
+          </Appear>
+          <List margin="20px 0 0 0">
+            <Appear fid="1">
+              <ListItem textColor="quartenary" textSize="30"><S type="bold">Mutate</S> its arguments</ListItem>
+            </Appear>
+            <Appear fid="2">
+              <ListItem textColor="quartenary" textSize="30">Perform <S type="bold">side effects</S> like API calls and routing transitions</ListItem>
+            </Appear>
+            <Appear fid="3">
+              <ListItem textColor="quartenary" textSize="30">Call <S type="bold">non-pure functions</S>, e.g. Date.now() or Math.random()</ListItem>
+            </Appear>
+          </List>
+        </Slide>
         <CodeSlide
           textSize="25"
           transition={["fade"]}
           lang="jsx"
-          code={require("raw-loader!../assets/reducer.code")}
+          code={require("raw-loader!../assets/visibility-filter-reducer.code")}
           ranges={[
-            { loc: [0, 11], title: "Reducer" },
-            { loc: [0, 1], note: "Accepts State & Action" },
-            { loc: [1, 6], note: "Action Switch" },
-            { loc: [6, 8], note: "Return the previous State in the default case" }
+            { loc: [7, 17], title: "Visibility Filter Reducer" },
+            { loc: [0, 1], title: "Visibility Filter Reducer", note: "Import Action Types" },
+            { loc: [2, 6], title: "Visibility Filter Reducer", note: "Set Initial State" },
+            { loc: [7, 8], title: "Visibility Filter Reducer", note: "Accepts State & Action" },
+            { loc: [8, 10], title: "Visibility Filter Reducer", note: "Action Switch" },
+            { loc: [10, 13], title: "Visibility Filter Reducer", note: "Using Object.assign{} to avoid State mutation" },
+            { loc: [13, 15], title: "Visibility Filter Reducer", note: "Return the previous State in the default case" }
           ]}
         />
         {/* SAMPLE SLIDES */}
