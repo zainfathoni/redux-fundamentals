@@ -400,15 +400,28 @@ export default class Presentation extends React.Component {
           textSize="25"
           transition={["fade"]}
           lang="jsx"
-          code={require("raw-loader!../assets/visibility-filter-reducer.code")}
+          code={require("raw-loader!../assets/todo-app-reducers.code")}
           ranges={[
-            { loc: [7, 17], title: "Visibility Filter Reducer" },
-            { loc: [0, 1], title: "Visibility Filter Reducer", note: "Import Action Types" },
-            { loc: [2, 6], title: "Visibility Filter Reducer", note: "Set Initial State" },
-            { loc: [7, 8], title: "Visibility Filter Reducer", note: "Accepts State & Action" },
-            { loc: [8, 10], title: "Visibility Filter Reducer", note: "Action Switch" },
-            { loc: [10, 13], title: "Visibility Filter Reducer", note: "Using Object.assign{} to avoid State mutation" },
-            { loc: [13, 15], title: "Visibility Filter Reducer", note: "Return the previous State in the default case" }
+            { loc: [0, 43], title: "Todo App Reducers" },
+            { loc: [1, 4], title: "Todo App Reducers", note: "Import Action Types" },
+            { loc: [4, 5], title: "Todo App Reducers", note: "Import Other Constants" },
+            { loc: [7, 11], title: "Todo App Reducers", note: "Set Initial State" },
+            { loc: [12, 13], title: "Todo App Reducers", note: "Accepts State & Action" },
+            { loc: [13, 14], title: "Todo App Reducers", note: "Action Switch" },
+            { loc: [39, 41], title: "Todo App Reducers", note: "Return the previous State in the default case" },
+            { loc: [14, 18], title: "Visibility Filter Reducer" },
+            { loc: [15, 16], title: "Visibility Filter Reducer", note: "Using Object.assign{} to avoid State mutation" },
+            { loc: [16, 17], title: "Visibility Filter Reducer", note: "Replace visibilityFilter's value with a new one" },
+            { loc: [18, 28], title: "Add Todo Reducer" },
+            { loc: [19, 20], title: "Add Todo Reducer", note: "Using Object.assign{} to avoid State mutation" },
+            { loc: [21, 22], title: "Add Todo Reducer", note: "Using Spread (...) operator to copy existing todos array elements" },
+            { loc: [22, 26], title: "Add Todo Reducer", note: "Add a new element at the end of todos array" },
+            { loc: [28, 39], title: "Toggle Todo Reducer" },
+            { loc: [29, 30], title: "Toggle Todo Reducer", note: "Using Object.assign{} to avoid State mutation" },
+            { loc: [30, 31], title: "Toggle Todo Reducer", note: "Using map to avoid todos mutation" },
+            { loc: [31, 32], title: "Toggle Todo Reducer", note: "Update todo element if the index matches" },
+            { loc: [32, 35], title: "Toggle Todo Reducer", note: "Using Object.assign{} (again) to avoid todo mutation" },
+            { loc: [36, 37], title: "Toggle Todo Reducer", note: "Return old todo element if the index doesn't match" }
           ]}
         />
         {/* SAMPLE SLIDES */}
