@@ -346,6 +346,17 @@ export default class Presentation extends React.Component {
           ]}
         />
         <CodeSlide
+          textSize="22"
+          transition={["fade"]}
+          lang="jsx"
+          code={require("raw-loader!../assets/state-shape.code")}
+          ranges={[
+            { loc: [0, 13], title: "State Shape" },
+            { loc: [1, 2], title: "State Shape", note: "Visibility Filter" },
+            { loc: [2, 12], title: "State Shape", note: "Todos" }
+          ]}
+        />
+        <CodeSlide
           textSize="25"
           transition={["fade"]}
           lang="jsx"
