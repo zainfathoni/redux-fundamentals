@@ -324,6 +324,31 @@ export default class Presentation extends React.Component {
           textSize="25"
           transition={["fade"]}
           lang="jsx"
+          code={require("raw-loader!../assets/action-structure.code")}
+          ranges={[
+            { loc: [0, 6], title: "Action Structure" },
+            { loc: [0, 1], title: "Action Structure", note: "Type Constant" },
+            { loc: [3, 4], title: "Action Structure", note: "Action Type" },
+            { loc: [4, 5], title: "Action Structure", note: "Action Payload (could be anything)" },
+            { loc: [2, 6], title: "Action Structure", note: "Action Object" }
+          ]}
+        />
+        <CodeSlide
+          textSize="18"
+          transition={["fade"]}
+          lang="jsx"
+          code={require("raw-loader!../assets/actions.code")}
+          ranges={[
+            { loc: [0, 31], title: "Actions" },
+            { loc: [0, 3], title: "Actions", note: "Action Types" },
+            { loc: [4, 9], title: "Actions", note: "Other Constants" },
+            { loc: [10, 30], title: "Actions", note: "Action Creators" }
+          ]}
+        />
+        <CodeSlide
+          textSize="25"
+          transition={["fade"]}
+          lang="jsx"
           code={require("raw-loader!../assets/reducer.code")}
           ranges={[
             { loc: [0, 11], title: "Reducer" },
