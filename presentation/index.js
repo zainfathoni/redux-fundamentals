@@ -400,28 +400,67 @@ export default class Presentation extends React.Component {
           textSize="25"
           transition={["fade"]}
           lang="jsx"
-          code={require("raw-loader!../assets/todo-app-reducers.code")}
+          code={require("raw-loader!../assets/todo-app-reducer.code")}
           ranges={[
-            { loc: [0, 43], title: "Todo App Reducers" },
-            { loc: [1, 4], title: "Todo App Reducers", note: "Import Action Types" },
-            { loc: [4, 5], title: "Todo App Reducers", note: "Import Other Constants" },
-            { loc: [7, 11], title: "Todo App Reducers", note: "Set Initial State" },
-            { loc: [12, 13], title: "Todo App Reducers", note: "Accepts State & Action" },
-            { loc: [13, 14], title: "Todo App Reducers", note: "Action Switch" },
-            { loc: [39, 41], title: "Todo App Reducers", note: "Return the previous State in the default case" },
-            { loc: [14, 18], title: "Visibility Filter Reducer" },
-            { loc: [15, 16], title: "Visibility Filter Reducer", note: "Using Object.assign{} to avoid State mutation" },
-            { loc: [16, 17], title: "Visibility Filter Reducer", note: "Replace visibilityFilter's value with a new one" },
-            { loc: [18, 28], title: "Add Todo Reducer" },
-            { loc: [19, 20], title: "Add Todo Reducer", note: "Using Object.assign{} to avoid State mutation" },
-            { loc: [21, 22], title: "Add Todo Reducer", note: "Using Spread (...) operator to copy existing todos array elements" },
-            { loc: [22, 26], title: "Add Todo Reducer", note: "Add a new element at the end of todos array" },
-            { loc: [28, 39], title: "Toggle Todo Reducer" },
-            { loc: [29, 30], title: "Toggle Todo Reducer", note: "Using Object.assign{} to avoid State mutation" },
-            { loc: [30, 31], title: "Toggle Todo Reducer", note: "Using map to avoid todos mutation" },
-            { loc: [31, 32], title: "Toggle Todo Reducer", note: "Update todo element if the index matches" },
-            { loc: [32, 35], title: "Toggle Todo Reducer", note: "Using Object.assign{} (again) to avoid todo mutation" },
-            { loc: [36, 37], title: "Toggle Todo Reducer", note: "Return old todo element if the index doesn't match" }
+            { loc: [12, 13], title: "Todo App Reducer" },
+            { loc: [1, 4], title: "Todo App Reducer", note: "Import Action Types" },
+            { loc: [4, 5], title: "Todo App Reducer", note: "Import Other Constants" },
+            { loc: [7, 11], title: "Todo App Reducer", note: "Set Initial State" },
+            { loc: [12, 13], title: "Todo App Reducer", note: "Accepts State & Action" },
+            { loc: [13, 14], title: "Todo App Reducer", note: "Action Switch" },
+            { loc: [39, 41], title: "Todo App Reducer", note: "Return the previous State in the default case" },
+            { loc: [14, 18], title: "Set Visibility Filter Handler" },
+            { loc: [15, 16], title: "Set Visibility Filter Handler", note: "Using Object.assign{} to avoid State mutation" },
+            { loc: [16, 17], title: "Set Visibility Filter Handler", note: "Replace visibilityFilter's value with a new one" },
+            { loc: [18, 28], title: "Add Todo Handler" },
+            { loc: [19, 20], title: "Add Todo Handler", note: "Using Object.assign{} to avoid State mutation" },
+            { loc: [21, 22], title: "Add Todo Handler", note: "Using Spread (...) operator to copy existing todos array elements" },
+            { loc: [22, 26], title: "Add Todo Handler", note: "Add a new element at the end of todos array" },
+            { loc: [28, 39], title: "Toggle Todo Handler" },
+            { loc: [29, 30], title: "Toggle Todo Handler", note: "Using Object.assign{} to avoid State mutation" },
+            { loc: [30, 31], title: "Toggle Todo Handler", note: "Using map to avoid todos mutation" },
+            { loc: [31, 32], title: "Toggle Todo Handler", note: "Update todo element if the index matches" },
+            { loc: [32, 35], title: "Toggle Todo Handler", note: "Using Object.assign{} (again) to avoid todo mutation" },
+            { loc: [36, 37], title: "Toggle Todo Handler", note: "Return old todo element if the index doesn't match" }
+          ]}
+        />
+        <CodeSlide
+          textSize="16"
+          transition={["fade"]}
+          lang="jsx"
+          code={require("raw-loader!../assets/reducer-composition.code")}
+          ranges={[
+            { loc: [40, 46], title: "Reducer Composition" },
+            { loc: [1, 5], title: "Reducer Composition", note: "Imports, as usual" },
+            { loc: [7, 15], title: "Visibility Filter Reducer" },
+            { loc: [7, 8], title: "Visibility Filter Reducer", note: "Still accepts State & Action" },
+            { loc: [7, 8], title: "Visibility Filter Reducer", note: "State is a Visibility Filter constant, with SHOW_ALL as the initial State" },
+            { loc: [8, 9], title: "Visibility Filter Reducer", note: "Action Switch, as usual" },
+            { loc: [11, 13], title: "Visibility Filter Reducer", note: "Return the previous State in the default case, as usual" },
+            { loc: [9, 11], title: "Set Visibility Filter Handler" },
+            { loc: [10, 11], title: "Set Visibility Filter Handler", note: "Only manage a slice of the state, hence not using Object.assign{} anymore" },
+            { loc: [10, 11], title: "Set Visibility Filter Handler", note: "Directly replaces previous State with the action's payload instead" },
+            { loc: [16, 39], title: "Todos Reducer" },
+            { loc: [16, 17], title: "Todos Reducer", note: "Still accepts State & Action" },
+            { loc: [16, 17], title: "Todos Reducer", note: "State is a todos array, with empty array as the initial State" },
+            { loc: [17, 18], title: "Todos Reducer", note: "Action Switch, as usual" },
+            { loc: [35, 37], title: "Todos Reducer", note: "Return the previous State in the default case, as usual" },
+            { loc: [18, 26], title: "Add Todo Handler" },
+            { loc: [19, 26], title: "Add Todo Handler", note: "Only manage a slice of the state, hence not using Object.assign{} anymore" },
+            { loc: [20, 21], title: "Add Todo Handler", note: "Using Spread (...) operator to copy existing todos array elements" },
+            { loc: [21, 25], title: "Add Todo Handler", note: "Add a new element at the end of todos array" },
+            { loc: [26, 35], title: "Toggle Todo Handler" },
+            { loc: [27, 28], title: "Toggle Todo Handler", note: "Only manage a slice of the state, hence not using Object.assign{} anymore" },
+            { loc: [27, 28], title: "Toggle Todo Handler", note: "Using map to avoid todos mutation" },
+            { loc: [28, 29], title: "Toggle Todo Handler", note: "Update todo element if the index matches" },
+            { loc: [29, 32], title: "Toggle Todo Handler", note: "Using Object.assign{} (again) to avoid todo mutation" },
+            { loc: [33, 34], title: "Toggle Todo Handler", note: "Return old todo element if the index doesn't match" },
+            { loc: [40, 46], title: "Todo App Combined Reducers" },
+            { loc: [40, 41], title: "Todo App Combined Reducers", note: "Still accepts State & Action" },
+            { loc: [40, 41], title: "Todo App Combined Reducers", note: "State is an object, with an empty object as the initial State, since the initial State are determined in each reducer" },
+            { loc: [41, 45], title: "Todo App Combined Reducers", note: "Returns a global State object, consists of 2 parts which are managed by their own reducers" },
+            { loc: [42, 43], title: "Todo App Combined Reducers", note: "Visibility Filter part is determined by the Visibility Filter Reducer, by providing the part of the global State as the parameter" },
+            { loc: [43, 44], title: "Todo App Combined Reducers", note: "Todos part is determined by the Todos Reducer, by providing the part of the global State as the parameter" }
           ]}
         />
         {/* SAMPLE SLIDES */}

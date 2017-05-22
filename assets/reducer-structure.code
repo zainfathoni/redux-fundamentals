@@ -1,1 +1,3 @@
-(previousState, action) => newState
+function (previousState, action) {
+  return newState
+}
