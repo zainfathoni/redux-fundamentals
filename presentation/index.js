@@ -200,7 +200,7 @@ export default class Presentation extends React.Component {
         </Slide>
 
         {/* THREE PRINCIPLES OF REDUX */}
-        <Slide transition={["spin"]} bgColor="primary" textColor="tertiary">
+        <Slide transition={["spin", "slide"]} bgColor="primary" textColor="tertiary">
           <Heading size={3} textColor="quartenary" caps>Three Principles of</Heading>
           <Heading size={3} textColor="redux" caps margin="0 0 30px 0">Redux</Heading>
           <List>
