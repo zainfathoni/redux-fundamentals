@@ -1,21 +1,19 @@
-# Spectacle Boilerplate
+# Redux Fundamentals
 
-## Reference
+## Overview
 
-The Spectacle core API is available at [https://github.com/FormidableLabs/spectacle/blob/master/README.markdown](https://github.com/FormidableLabs/spectacle/blob/master/README.markdown).
+This is a presentation slide for **Redux Fundamentals** talk in [BandungJS Meetup #4](https://www.meetup.com/BandungJS/events/241542959/)
+It is based on Spectacle core API which is available at [https://github.com/FormidableLabs/spectacle/blob/master/README.markdown](https://github.com/FormidableLabs/spectacle/blob/master/README.markdown).
 
-## Development
+## Running
 
-After downloading the boilerplate, your first order of business is to open terminal and run `yarn`. (or `npm install` if you're about that life)
+Make sure `yarn` is installed.
+Please follow [`yarn` installation instructions](https://yarnpkg.com/en/docs/install).
 
-Next, run `rm -R .git` to remove the existing version control.
+```
+git clone git@github.com:zainfathoni/redux-fundamentals.git
+yarn
+yarn start
+```
 
-Then, to start up the local server, run `npm start`
-
-Open a browser and hit [http://localhost:3000](http://localhost:3000), and we are ready to roll
-
-## Build & Deployment
-
-Building the dist version of the project is as easy as running `npm run build`
-
-If you want to deploy the slideshow to surge, run `npm run deploy`
+Then open a browser and hit [http://localhost:3000](http://localhost:3000)
