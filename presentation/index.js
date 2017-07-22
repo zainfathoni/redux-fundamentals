@@ -42,7 +42,8 @@ const images = {
   redux: require("../assets/redux-logo.png"),
   react: require("../assets/react-logo.svg"),
   bukalapak: require("../assets/bukalapak-logo.png"),
-  mentosCoke: require("../assets/mentos-coke.gif")
+  mentosCoke: require("../assets/mentos-coke.gif"),
+  todoAppStore: require("../assets/todo-app-store.png")
 };
 
 preloader(images);
@@ -495,6 +496,27 @@ export default class Presentation extends React.Component {
               <ListItem textColor="quartenary" textSize="30"><S type="bold">Unregisters</S> listeners via the function returned by <S type="bold">subscribe(listener)</S></ListItem>
             </Appear>
           </List>
+        </Slide>
+        <CodeSlide
+          textSize="21"
+          transition={["fade"]}
+          lang="jsx"
+          code={require("raw-loader!../assets/todo-app-store.code")}
+          ranges={[
+            { loc: [0, 26], title: "Todo App Store" },
+            { loc: [0, 1], title: "Todo App Store", note: "Import createStore" },
+            { loc: [1, 2], title: "Todo App Store", note: "Import Reducers" },
+            { loc: [2, 8], title: "Todo App Store", note: "Import Actions" },
+            { loc: [9, 10], title: "Create Store", note: "What the hell is this??" },
+            { loc: [11, 12], title: "getState()", note: "Log the initial state" },
+            { loc: [13, 16], title: "subscribe(listener)", note: "Every time the state changes, log it" },
+            { loc: [17, 23], title: "dispatch(action)", note: "Dispatch some actions" },
+            { loc: [24, 25], title: "unsubscribe()", note: "Stop listening to state updates" },
+          ]}
+        />
+        <Slide transition={["slide"]} bgColor="primary" textColor="tertiary">
+          <Heading size={3} textColor="tertiary" caps margin="0 0 30px 0">Store Console Logs</Heading>
+          <Image src={images.todoAppStore} height={550}/>
         </Slide>
         {/* SAMPLE SLIDES */}
         <Slide transition={["fade"]} bgColor="tertiary">
