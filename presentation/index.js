@@ -93,7 +93,6 @@ export default class Presentation extends React.Component {
             <ListItem>Store</ListItem>
             <ListItem>Example</ListItem>
             <ListItem>What's Next?</ListItem>
-            <ListItem>You Might Not Need Redux</ListItem>
           </List>
         </Slide>
         {/* WHY? */}
@@ -569,19 +568,38 @@ export default class Presentation extends React.Component {
             { loc: [20, 21], title: "Create Store Methods", note: "Return all 3 defined methods above" }
           ]}
         />
-        {/* SAMPLE SLIDES */}
-        <Slide transition={["fade"]} bgColor="tertiary">
-          <Link href="https://medium.com/@dan_abramov/you-might-not-need-redux-be46360cf367">
-            <Text>
-              You might not need Redux
-            </Text>
-          </Link>
+        {/* WHAT'S NEXT? */}
+        <Slide transition={["slide"]} bgColor="primary">
+          <Heading size={3} textColor="tertiary" caps margin="0 0 30px 0">What's Next?</Heading>
+            <Appear fid="1">
+              <Text textColor="quartenary" textSize="40" margin="30px 0 0 0">
+                Do you want to use Redux?<br/>There are so many things to learn ahead.
+              </Text>
+            </Appear>
+            <Appear fid="2">
+              <Text textColor="quartenary" textSize="40" margin="30px 0 0 0">
+                But before actually use Redux in your app,<br/>please reconsider this:
+              </Text>
+            </Appear>
         </Slide>
-        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+        <Slide transition={["fade"]} bgColor="quartenary" textColor="primary">
           <BlockQuote>
-            <Quote>Example Quote</Quote>
-            <Cite>Author</Cite>
+            <Quote>
+              <Link href="https://medium.com/@dan_abramov/you-might-not-need-redux-be46360cf367">
+                <Text textColor="primary" textSize={70}>
+                  <S type="underline">You Might Not Need Redux</S>
+                </Text>
+              </Link>
+            </Quote>
+            <Cite textColor="secondary">Dan Abramov, the creator of Redux</Cite>
           </BlockQuote>
+        </Slide>
+        {/* Q/A */}
+        <Slide transition={["slide"]} bgColor="primary">
+          <Heading size={1} textColor="tertiary" caps margin="0 0 30px 0">Q/A</Heading>
+        </Slide>
+        {/* SAMPLE SLIDES */}
+        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
           <Interactive/>
         </Slide>
          {
