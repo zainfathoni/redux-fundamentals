@@ -22,7 +22,6 @@ import {
   ComponentPlayground,
   Link,
   Appear,
-  MarkdownSlides,
   Image
 } from "spectacle";
 
@@ -626,17 +625,6 @@ export default class Presentation extends React.Component {
         <Slide transition={["slide"]} bgColor="primary">
           <Heading size={1} textColor="tertiary" caps margin="0 0 30px 0">Q/A</Heading>
         </Slide>
-        {/* SAMPLE SLIDES */}
-         {
-          MarkdownSlides`
-#### Create Multiple Slides in Markdown
-All the same tags and elements supported in <Markdown /> are supported in MarkdownSlides.
----
-Slides are separated with **three dashes** and can be used _anywhere_ in the deck. The markdown can either be:
-* A Tagged Template Literal
-* Imported Markdown from another file
-          `
-        }
       </Deck>
     );
   }
