@@ -1,11 +1,9 @@
 import React, { Component } from "react";
 import { Provider } from "react-redux";
-import { createStore } from "redux";
-import todoApp from "./reducers";
+import configureStore from "./configure-store";
 import App from "./components/app";
 
-const store = createStore(todoApp);
-
+const store = configureStore();
 
 export default class Todo extends Component {
   render() {
@@ -16,4 +14,3 @@ export default class Todo extends Component {
     );
   }
 }
-

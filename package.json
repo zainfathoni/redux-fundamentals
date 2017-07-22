@@ -17,6 +17,7 @@
     "react": "15.4.2",
     "react-dom": "15.4.2",
     "react-redux": "^5.0.5",
+    "redux-logger": "^3.0.6",
     "spectacle": "^2.0.0",
     "spectacle-code-slide": "^0.4.0"
   },
