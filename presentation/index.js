@@ -1,7 +1,7 @@
 // Import React
 import React from "react";
 import CodeSlide from "spectacle-code-slide";
-import Interactive from "../assets/interactive";
+import Todo from "../assets/todo";
 
 // Import Spectacle Core tags
 import {
@@ -570,10 +570,11 @@ export default class Presentation extends React.Component {
         />
         {/* Working Exapmle */}
         <Slide transition={["spin"]} bgColor="primary" width="100%" >
-          <Heading size={2} textColor="quartenary" margin="0 0 50px 0" caps>Todo App<br/>Working Example</Heading>
+          <Heading size={2} textColor="quartenary" margin="0 0 50px 0" caps>Working Example</Heading>
         </Slide>
         <Slide transition={["fade"]} bgColor="primary">
-          <Interactive/>
+          <Heading size={2} textColor="quartenary" margin="0 0 50px 0" caps>Todo App</Heading>
+          <Todo/>
         </Slide>
         {/* WHAT'S NEXT? */}
         <Slide transition={["slide"]} bgColor="primary">
