@@ -115,7 +115,7 @@ export default class Presentation extends Component {
           </List>
         </Slide>
         {/* WHY? */}
-        <Slide transition={["spin"]} width="100%" >
+        <Slide transition={["spin", "slide"]} width="100%" >
           <Heading size={2} textColor="quartenary" margin="0 0 50px 0" caps>Why?</Heading>
           <Layout>
             <Fill>
