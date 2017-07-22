@@ -91,8 +91,8 @@ export default class Presentation extends React.Component {
             <ListItem>Reducers</ListItem>
             <ListItem>Store</ListItem>
             <ListItem>Example</ListItem>
-            <ListItem>Behind The Scene</ListItem>
             <ListItem>What's Next?</ListItem>
+            <ListItem>You Might Not Need Redux</ListItem>
           </List>
         </Slide>
         {/* WHY? */}
@@ -324,6 +324,7 @@ export default class Presentation extends React.Component {
         <Slide transition={["spin"]} width="100%" >
           <Heading size={2} textColor="quartenary" margin="0 0 50px 0" caps>Building Todo App</Heading>
         </Slide>
+        {/* ACTIONS */}
         <CodeSlide
           textSize="25"
           transition={["fade"]}
@@ -360,6 +361,7 @@ export default class Presentation extends React.Component {
             { loc: [2, 12], title: "State Shape", note: "Todos" }
           ]}
         />
+        {/* REDUCERS */}
         <Slide transition={["slide"]} bgColor="primary" textColor="tertiary">
           <Heading size={3} textColor="tertiary" caps margin="0 0 30px 0">Reducer Structure</Heading>
           <CodePane
@@ -463,6 +465,37 @@ export default class Presentation extends React.Component {
             { loc: [43, 44], title: "Todo App Combined Reducers", note: "Todos part is determined by the Todos Reducer, by providing the part of the global State as the parameter" }
           ]}
         />
+        {/* STORES */}
+        <Slide transition={["slide"]} bgColor="primary" textColor="tertiary">
+          <Heading size={3} textColor="tertiary" caps margin="0 0 30px 0">Store Methods</Heading>
+          <CodePane
+            textSize="25"
+            lang="js"
+            source={require("raw-loader!../assets/store-methods.code")}
+          />
+          <Appear fid="1">
+            <Text textColor="quartenary" textSize="30" margin="30px 0 0 0">
+              Store <S type="bold">responsibilities</S>:
+            </Text>
+          </Appear>
+          <List margin="20px 0 0 0">
+            <Appear fid="1">
+              <ListItem textColor="quartenary" textSize="30">Holds application <S type="bold">state</S></ListItem>
+            </Appear>
+            <Appear fid="2">
+              <ListItem textColor="quartenary" textSize="30">Allows access to state via <S type="bold">getState()</S></ListItem>
+            </Appear>
+            <Appear fid="3">
+              <ListItem textColor="quartenary" textSize="30">Allows state to be updated via <S type="bold">dispatch(action)</S></ListItem>
+            </Appear>
+            <Appear fid="4">
+              <ListItem textColor="quartenary" textSize="30">Registers listeners via <S type="bold">subscribe(listener)</S></ListItem>
+            </Appear>
+            <Appear fid="5">
+              <ListItem textColor="quartenary" textSize="30"><S type="bold">Unregisters</S> listeners via the function returned by <S type="bold">subscribe(listener)</S></ListItem>
+            </Appear>
+          </List>
+        </Slide>
         {/* SAMPLE SLIDES */}
         <Slide transition={["fade"]} bgColor="tertiary">
           <Link href="https://medium.com/@dan_abramov/you-might-not-need-redux-be46360cf367">

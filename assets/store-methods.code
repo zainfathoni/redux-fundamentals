@@ -1,0 +1,6 @@
+let store = createStore(todoApp)
+let unsubscribe = store.subscribe(() =>
+  console.log(store.getState())
+)
+store.dispatch(addTodo('Learn about actions'))
+unsubscribe()
