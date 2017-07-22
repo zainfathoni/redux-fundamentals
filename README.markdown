@@ -10,6 +10,8 @@ It is based on Spectacle core API which is available at [https://github.com/Form
 Make sure `yarn` is installed.
 Please follow [`yarn` installation instructions](https://yarnpkg.com/en/docs/install).
 
+After you're sure that `yarn` is installed, you can execute these commands to clone the repo and run the presentation slide.
+
 ```
 git clone git@github.com:zainfathoni/redux-fundamentals.git
 yarn
