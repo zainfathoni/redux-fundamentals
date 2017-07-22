@@ -1,7 +1,7 @@
 // Import React
 import React from "react";
 import CodeSlide from "spectacle-code-slide";
-import Todo from "../assets/todo";
+import Todo from "../assets/app/todo";
 
 // Import Spectacle Core tags
 import {
@@ -38,12 +38,32 @@ require("spectacle/lib/themes/default/index.css");
 
 
 const images = {
-  pattern: require("../assets/react-pattern.png"),
-  redux: require("../assets/redux-logo.png"),
-  react: require("../assets/react-logo.svg"),
-  bukalapak: require("../assets/bukalapak-logo.png"),
-  mentosCoke: require("../assets/mentos-coke.gif"),
-  todoAppStore: require("../assets/todo-app-store.png")
+  pattern: require("../assets/images/react-pattern.png"),
+  redux: require("../assets/images/redux-logo.png"),
+  react: require("../assets/images/react-logo.svg"),
+  bukalapak: require("../assets/images/bukalapak-logo.png"),
+  mentosCoke: require("../assets/images/mentos-coke.gif"),
+  todoAppStore: require("../assets/images/todo-app-store.png")
+};
+
+const codes = {
+  reactPattern: require("raw-loader!../assets/codes/react-pattern.code"),
+  firstPrinciple: require("raw-loader!../assets/codes/first-principle.code"),
+  secondPrinciple: require("raw-loader!../assets/codes/second-principle.code"),
+  thirdPrinciple: require("raw-loader!../assets/codes/third-principle.code"),
+  pureFunctions: require("raw-loader!../assets/codes/pure-functions.code"),
+  impureFunctions: require("raw-loader!../assets/codes/impure-functions.code"),
+  counter: require("raw-loader!../assets/codes/counter.code"),
+  actionStructure: require("raw-loader!../assets/codes/action-structure.code"),
+  actions: require("raw-loader!../assets/codes/actions.code"),
+  stateShape: require("raw-loader!../assets/codes/state-shape.code"),
+  reducerStructure: require("raw-loader!../assets/codes/reducer-structure.code"),
+  todoAppReducer: require("raw-loader!../assets/codes/todo-app-reducer.code"),
+  reducerComposition: require("raw-loader!../assets/codes/reducer-composition.code"),
+  storeMethods: require("raw-loader!../assets/codes/store-methods.code"),
+  todoAppStore: require("raw-loader!../assets/codes/todo-app-store.code"),
+  createStore: require("raw-loader!../assets/codes/create-store.code"),
+  createStoreMagic: require("raw-loader!../assets/codes/create-store-magic.code")
 };
 
 preloader(images);
@@ -162,7 +182,7 @@ export default class Presentation extends React.Component {
           textSize="18"
           transition={["fade"]}
           lang="jsx"
-          code={require("raw-loader!../assets/react-pattern.code")}
+          code={codes.reactPattern}
           ranges={[
             { loc: [0, 4], title: "Real World Example", note: "Case Study: Intermediate Component" },
             { loc: [6, 16], title: "Received Props", note: "It takes (many) Props from Parent Component" },
@@ -216,7 +236,7 @@ export default class Presentation extends React.Component {
               <CodePane
                 textSize="18"
                 lang="js"
-                source={require("raw-loader!../assets/first-principle.code")}
+                source={codes.firstPrinciple}
               />
             </Fit>
             <Fill>
@@ -244,7 +264,7 @@ export default class Presentation extends React.Component {
               <CodePane
                 textSize="18"
                 lang="js"
-                source={require("raw-loader!../assets/second-principle.code")}
+                source={codes.secondPrinciple}
               />
             </Fit>
             <Fill>
@@ -270,7 +290,7 @@ export default class Presentation extends React.Component {
               <CodePane
                 textSize="18"
                 lang="js"
-                source={require("raw-loader!../assets/third-principle.code")}
+                source={codes.thirdPrinciple}
               />
             </Fit>
             <Fill>
@@ -302,7 +322,7 @@ export default class Presentation extends React.Component {
               <CodePane
                 textSize="18"
                 lang="js"
-                source={require("raw-loader!../assets/pure-functions.code")}
+                source={codes.pureFunctions}
                 margin="20px 20px 0 0"
               />
             </Fill>
@@ -310,7 +330,7 @@ export default class Presentation extends React.Component {
               <CodePane
                 textSize="18"
                 lang="js"
-                source={require("raw-loader!../assets/impure-functions.code")}
+                source={codes.impureFunctions}
                 margin="20px 0 0 20px"
               />
             </Fill>
@@ -318,7 +338,7 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide align="center center">
           <ComponentPlayground
-            code={require("raw-loader!../assets/counter.code")}
+            code={codes.counter}
           />
         </Slide>
         <Slide transition={["spin"]} width="100%" >
@@ -329,7 +349,7 @@ export default class Presentation extends React.Component {
           textSize="25"
           transition={["fade"]}
           lang="jsx"
-          code={require("raw-loader!../assets/action-structure.code")}
+          code={codes.actionStructure}
           ranges={[
             { loc: [0, 6], title: "Action Structure" },
             { loc: [0, 1], title: "Action Structure", note: "Type Constant" },
@@ -342,7 +362,7 @@ export default class Presentation extends React.Component {
           textSize="18"
           transition={["fade"]}
           lang="jsx"
-          code={require("raw-loader!../assets/actions.code")}
+          code={codes.actions}
           ranges={[
             { loc: [0, 31], title: "Actions" },
             { loc: [0, 3], title: "Actions", note: "Action Types" },
@@ -354,7 +374,7 @@ export default class Presentation extends React.Component {
           textSize="22"
           transition={["fade"]}
           lang="jsx"
-          code={require("raw-loader!../assets/state-shape.code")}
+          code={codes.stateShape}
           ranges={[
             { loc: [0, 13], title: "State Shape" },
             { loc: [1, 2], title: "State Shape", note: "Visibility Filter" },
@@ -367,7 +387,7 @@ export default class Presentation extends React.Component {
           <CodePane
             textSize="30"
             lang="js"
-            source={require("raw-loader!../assets/reducer-structure.code")}
+            source={codes.reducerStructure}
           />
           <Appear fid="1">
             <Text textColor="quartenary" textSize="20" margin="20px 0 0 0">
@@ -402,7 +422,7 @@ export default class Presentation extends React.Component {
           textSize="25"
           transition={["fade"]}
           lang="jsx"
-          code={require("raw-loader!../assets/todo-app-reducer.code")}
+          code={codes.todoAppReducer}
           ranges={[
             { loc: [12, 13], title: "Todo App Reducer" },
             { loc: [1, 4], title: "Todo App Reducer", note: "Import Action Types" },
@@ -430,7 +450,7 @@ export default class Presentation extends React.Component {
           textSize="16"
           transition={["fade"]}
           lang="jsx"
-          code={require("raw-loader!../assets/reducer-composition.code")}
+          code={codes.reducerComposition}
           ranges={[
             { loc: [40, 46], title: "Reducer Composition" },
             { loc: [1, 5], title: "Reducer Composition", note: "Imports, as usual" },
@@ -471,7 +491,7 @@ export default class Presentation extends React.Component {
           <CodePane
             textSize="25"
             lang="js"
-            source={require("raw-loader!../assets/store-methods.code")}
+            source={codes.storeMethods}
           />
           <Appear fid="1">
             <Text textColor="quartenary" textSize="30" margin="30px 0 0 0">
@@ -500,7 +520,7 @@ export default class Presentation extends React.Component {
           textSize="21"
           transition={["fade"]}
           lang="jsx"
-          code={require("raw-loader!../assets/todo-app-store.code")}
+          code={codes.todoAppStore}
           ranges={[
             { loc: [0, 26], title: "Todo App Store" },
             { loc: [0, 1], title: "Todo App Store", note: "Import createStore" },
@@ -522,7 +542,7 @@ export default class Presentation extends React.Component {
           <CodePane
             textSize="25"
             lang="js"
-            source={require("raw-loader!../assets/create-store.code")}
+            source={codes.createStore}
           />
           <Appear fid="1">
             <Text textColor="quartenary" textSize="30" margin="20px 0 0 0">
@@ -551,7 +571,7 @@ export default class Presentation extends React.Component {
           textSize="21"
           transition={["fade"]}
           lang="jsx"
-          code={require("raw-loader!../assets/create-store-magic.code")}
+          code={codes.createStoreMagic}
           ranges={[
             { loc: [0, 25], title: "Create Store 'Magic'" },
             { loc: [0, 1], title: "Create Store 'Magic'", note: "Accepts Combined Reducer" },
