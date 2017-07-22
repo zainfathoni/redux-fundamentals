@@ -1,5 +1,5 @@
 // Import React
-import React from "react";
+import React, { Component } from "react";
 import CodeSlide from "spectacle-code-slide";
 import Todo from "../assets/app/todo";
 
@@ -80,7 +80,7 @@ const theme = createTheme({
   monospace: "monospace"
 });
 
-export default class Presentation extends React.Component {
+export default class Presentation extends Component {
   render() {
     return (
       <Deck transition={["zoom", "slide"]} transitionDuration={600} theme={theme}>
@@ -621,9 +621,22 @@ export default class Presentation extends React.Component {
             <Cite textColor="secondary">Dan Abramov, the creator of Redux</Cite>
           </BlockQuote>
         </Slide>
-        {/* Q/A */}
+        {/* CLOSING */}
         <Slide transition={["slide"]} bgColor="primary">
           <Heading size={1} textColor="tertiary" caps margin="0 0 30px 0">Q/A</Heading>
+        </Slide>
+        <Slide transition={["slide"]} bgColor="white">
+          <Heading lineHeight={1} textFont="primary" textColor="redux" margin="0 0 100px 0">
+            Thank You
+          </Heading>
+          <Text textSize="24px" textColor="quartenary" textFont="secondary" margin="0 0 20px 0">
+            This presentation slide can be found at
+          </Text>
+          <Link href="https://github.com/zainfathoni/redux-fundamentals">
+            <Text textColor="quartenary" textFont="monospace" textSize="20">
+              <S type="underline">https://github.com/zainfathoni/redux-fundamentals</S>
+            </Text>
+          </Link>
         </Slide>
       </Deck>
     );
