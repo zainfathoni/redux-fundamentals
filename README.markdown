@@ -19,3 +19,8 @@ yarn start
 ```
 
 Then open a browser and hit [http://localhost:3000](http://localhost:3000)
+
+## References
+
+This talk is based on a combination of [Redux](http://redux.js.org/) Official Documentation and [Getting Started with Redux](https://egghead.io/courses/getting-started-with-redux) Free Video Course on Egghead.
+Both are created by [Dan Abramov](https://github.com/gaearon), the creator of Redux.
