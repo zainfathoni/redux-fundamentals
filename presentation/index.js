@@ -91,7 +91,7 @@ export default class Presentation extends React.Component {
             <ListItem>Actions</ListItem>
             <ListItem>Reducers</ListItem>
             <ListItem>Store</ListItem>
-            <ListItem>Example</ListItem>
+            <ListItem>Working Example</ListItem>
             <ListItem>What's Next?</ListItem>
           </List>
         </Slide>
@@ -568,6 +568,13 @@ export default class Presentation extends React.Component {
             { loc: [20, 21], title: "Create Store Methods", note: "Return all 3 defined methods above" }
           ]}
         />
+        {/* Working Exapmle */}
+        <Slide transition={["spin"]} bgColor="primary" width="100%" >
+          <Heading size={2} textColor="quartenary" margin="0 0 50px 0" caps>Todo App<br/>Working Example</Heading>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="primary">
+          <Interactive/>
+        </Slide>
         {/* WHAT'S NEXT? */}
         <Slide transition={["slide"]} bgColor="primary">
           <Heading size={3} textColor="tertiary" caps margin="0 0 30px 0">What's Next?</Heading>
@@ -599,9 +606,6 @@ export default class Presentation extends React.Component {
           <Heading size={1} textColor="tertiary" caps margin="0 0 30px 0">Q/A</Heading>
         </Slide>
         {/* SAMPLE SLIDES */}
-        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
-          <Interactive/>
-        </Slide>
          {
           MarkdownSlides`
 #### Create Multiple Slides in Markdown
