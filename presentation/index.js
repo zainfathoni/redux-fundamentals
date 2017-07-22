@@ -511,13 +511,64 @@ export default class Presentation extends React.Component {
             { loc: [11, 12], title: "getState()", note: "Log the initial state" },
             { loc: [13, 16], title: "subscribe(listener)", note: "Every time the state changes, log it" },
             { loc: [17, 23], title: "dispatch(action)", note: "Dispatch some actions" },
-            { loc: [24, 25], title: "unsubscribe()", note: "Stop listening to state updates" },
+            { loc: [24, 25], title: "unsubscribe()", note: "Stop listening to state updates" }
           ]}
         />
         <Slide transition={["slide"]} bgColor="primary" textColor="tertiary">
           <Heading size={3} textColor="tertiary" caps margin="0 0 30px 0">Store Console Logs</Heading>
           <Image src={images.todoAppStore} height={550}/>
         </Slide>
+        <Slide transition={["slide"]} bgColor="primary" textColor="tertiary">
+          <Heading size={3} textColor="tertiary" caps margin="0 0 30px 0">Create Store</Heading>
+          <CodePane
+            textSize="25"
+            lang="js"
+            source={require("raw-loader!../assets/create-store.code")}
+          />
+          <Appear fid="1">
+            <Text textColor="quartenary" textSize="30" margin="20px 0 0 0">
+              What the hell is <S type="bold">createStore()</S>?
+            </Text>
+          </Appear>
+          <Appear fid="2">
+            <Text textColor="quartenary" textSize="30" margin="20px 0 0 0">
+              Redux tries to avoid <S type="italic">'magic'</S> which causes unpredictability,<br/>but why is <S type="bold">createStore()</S> allowed to do such <S type="italic">'magic'</S> in Redux?
+            </Text>
+          </Appear>
+          <Link href="https://github.com/tayiorbeii/egghead.io_redux_course_notes/blob/master/03-Implementing_Store_from_Scratch.md" target="_blank">
+            <Appear fid="3">
+                <Text textColor="quartenary" textSize="30" margin="20px 0 0 0">
+                  Well, here's where the magic comes from:<br/><S type="underline">Implementing Store from Scratch</S>
+                </Text>
+            </Appear>
+          </Link>
+          <Appear fid="4">
+            <Text textColor="quartenary" textSize="30" margin="30px 0 0 0">
+              Let's brake the <S type="italic">'magic'</S> down.
+            </Text>
+          </Appear>
+        </Slide>
+        <CodeSlide
+          textSize="21"
+          transition={["fade"]}
+          lang="jsx"
+          code={require("raw-loader!../assets/create-store-magic.code")}
+          ranges={[
+            { loc: [0, 25], title: "Create Store 'Magic'" },
+            { loc: [0, 1], title: "Create Store 'Magic'", note: "Accepts Combined Reducer" },
+            { loc: [1, 2], title: "Create Store 'Magic'", note: "Hold the State object" },
+            { loc: [2, 3], title: "Create Store 'Magic'", note: "Array of Listener Functions" },
+            { loc: [4, 5], title: "getState()", note: "Simply returns the State object" },
+            { loc: [6, 7], title: "dispatch(action)", note: "Accepts an Action" },
+            { loc: [7, 8], title: "dispatch(action)", note: "Execute Combined Reducer to the State, then update the new State" },
+            { loc: [8, 9], title: "dispatch(action)", note: "Execute All Listener Functions" },
+            { loc: [11, 12], title: "subscribe(listener)", note: "Accepts a Listener Function" },
+            { loc: [12, 13], title: "subscribe(listener)", note: "Push the function to Listeners array" },
+            { loc: [13, 16], title: "subscribe(listener)", note: "Return the unsubscribe() function" },
+            { loc: [18, 19], title: "Dummy dispatch({})", note: "Initialize State by calling an empty dispatch()" },
+            { loc: [20, 21], title: "Create Store Methods", note: "Return all 3 defined methods above" }
+          ]}
+        />
         {/* SAMPLE SLIDES */}
         <Slide transition={["fade"]} bgColor="tertiary">
           <Link href="https://medium.com/@dan_abramov/you-might-not-need-redux-be46360cf367">
