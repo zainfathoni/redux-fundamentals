@@ -50,14 +50,14 @@ class App extends Component {
       <div>
         {this.state.value} <br />
         <button
-          onClick={this.increment}
-        >
-          +
-        </button>
-        <button
           onClick={this.decrement}
         >
           -
+        </button>
+        <button
+          onClick={this.increment}
+        >
+          +
         </button>
       </div>
     )
