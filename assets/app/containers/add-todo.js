@@ -8,6 +8,9 @@ let AddTodo = ({ dispatch }) => {
   return (
     <div>
       <form
+        style={{
+          color: "#521262"
+        }}
         onSubmit={(e) => {
           e.preventDefault();
           if (!input.value.trim()) {
@@ -24,9 +27,6 @@ let AddTodo = ({ dispatch }) => {
         />
         <button
           type="submit"
-          style={{
-            color: "#521262"
-          }}
         >
           Add Todo
         </button>

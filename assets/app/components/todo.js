@@ -7,7 +7,8 @@ const Todo = ({ onClick, completed, text }) => (
       textDecoration: completed ? "line-through" : "none",
       color: completed ? "#3490DE" : "#521262",
       listStyleType: "square",
-      listStylePosition: "inside"
+      listStylePosition: "inside",
+      cursor: "pointer"
     }}
   >
     {text}
