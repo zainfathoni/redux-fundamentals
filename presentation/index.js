@@ -599,13 +599,38 @@ export default class Presentation extends Component {
         <Slide transition={["slide"]} bgColor="primary">
           <Heading size={3} textColor="tertiary" caps margin="0 0 30px 0">What's Next?</Heading>
             <Appear fid="1">
-              <Text textColor="quartenary" textSize="40" margin="30px 0 0 0">
-                Do you want to use Redux?<br/>There are so many things to learn ahead.
+              <Text textColor="quartenary" textSize="35" margin="30px 0 0 0">
+                Do you want to use Redux?
               </Text>
             </Appear>
             <Appear fid="2">
+              <Text textColor="quartenary" textSize="35" margin="30px 0 0 0">
+                There are still many things to learn ahead, e.g.:
+              </Text>
+            </Appear>
+            <List margin="20px 0 0 0">
+              <Appear fid="1">
+                <ListItem textColor="quartenary" textSize="30">React <S type="bold">Integration</S>, e.g. <S type="bold">react-redux</S></ListItem>
+              </Appear>
+              <Appear fid="2">
+                <ListItem textColor="quartenary" textSize="30">Redux <S type="bold">Middlewares</S></ListItem>
+              </Appear>
+              <Appear fid="3">
+                <ListItem textColor="quartenary" textSize="30"><S type="bold">Promise</S> Handling, e.g. <S type="bold">redux-thunk</S> middleware</ListItem>
+              </Appear>
+              <Appear fid="4">
+                <ListItem textColor="quartenary" textSize="30">Custom <S type="bold">Logging</S>, e.g. <S type="bold">redux-logger</S> middleware</ListItem>
+              </Appear>
+              <Appear fid="5">
+                <ListItem textColor="quartenary" textSize="30">Redux <S type="bold">Dev Tools</S>, e.g. <S type="bold">redux-devtools</S>, <S type="bold">redux-devtools-extension</S></ListItem>
+              </Appear>
+              <Appear fid="6">
+                <ListItem textColor="quartenary" textSize="30">etc.</ListItem>
+              </Appear>
+            </List>
+            <Appear fid="4">
               <Text textColor="quartenary" textSize="40" margin="30px 0 0 0">
-                But before actually use Redux in your app,<br/>please reconsider this:
+                But before actually use Redux in your app,<br/>please <S type="bold">reconsider</S> this:
               </Text>
             </Appear>
         </Slide>
