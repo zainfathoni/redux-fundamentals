@@ -589,10 +589,10 @@ export default class Presentation extends Component {
         />
         {/* Working Exapmle */}
         <Slide transition={["spin"]} bgColor="primary" width="100%" >
-          <Heading size={2} textColor="quartenary" margin="0 0 50px 0" caps>Working Example</Heading>
+          <Heading size={2} textColor="tertiary" margin="0 0 50px 0" caps>Working Example</Heading>
         </Slide>
         <Slide transition={["fade"]} bgColor="primary">
-          <Heading size={2} textColor="quartenary" margin="0 0 50px 0" caps>Todo App</Heading>
+          <Heading size={2} textColor="tertiary" margin="0 0 50px 0" caps>Todo App</Heading>
           <Todo/>
         </Slide>
         {/* WHAT'S NEXT? */}
