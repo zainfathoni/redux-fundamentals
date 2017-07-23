@@ -22,7 +22,12 @@ let AddTodo = ({ dispatch }) => {
             input = node;
           }}
         />
-        <button type="submit">
+        <button
+          type="submit"
+          style={{
+            color: "#521262"
+          }}
+        >
           Add Todo
         </button>
       </form>

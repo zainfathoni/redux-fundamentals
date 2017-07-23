@@ -2,7 +2,11 @@ import React from "react";
 import FilterLink from "../containers/filter-link";
 
 const Footer = () => (
-  <p>
+  <p
+    style={{
+      color: "#521262"
+    }}
+  >
     Show:
     {" "}
     <FilterLink filter="SHOW_ALL">

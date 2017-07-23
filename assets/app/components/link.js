@@ -8,6 +8,9 @@ const Link = ({ active, children, onClick }) => {
   return (
     <a
       href="#"
+      style={{
+        color: active ? "#521262" : "#3490DE"
+      }}
       onClick={(e) => {
         e.preventDefault();
         onClick();
