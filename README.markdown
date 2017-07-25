@@ -2,8 +2,7 @@
 
 ## Overview
 
-This is a presentation slide for **Redux Fundamentals** talk in [BandungJS Meetup #4](https://www.meetup.com/BandungJS/events/241542959/)
-It is based on Spectacle core API which is available at [https://github.com/FormidableLabs/spectacle/blob/master/README.markdown](https://github.com/FormidableLabs/spectacle/blob/master/README.markdown).
+This is a presentation slide for **Redux Fundamentals** talk in [BandungJS Meetup #4](https://www.meetup.com/BandungJS/events/241542959/). It is built by using [Formidable](https://formidable.com/)'s [Spectacle](https://formidable.com/open-source/spectacle/) library.
 
 ## Running
 
